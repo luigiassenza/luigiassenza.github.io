@@ -4,6 +4,7 @@ title: "What is machine learning?"
 date: 2024-06-03 19:22:00 +0100
 categories: Machine Learning
 author: Luigi Assenza
+comments_id: 2
 ---
 <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript">
 </script>
@@ -177,3 +178,7 @@ Example of hyperparameters are:
 1. the maxiumum number of iterations to perform before the algorithm stops;
 2. the learning rate, that is the step done by the gradient descent algorithm;
 3. the number of neighbours ($$k$$) in the k-nearest neighbour algorithm.
+
+{% if page.comments_id %}
+    {% include comments.html issue_id=page.comments_id %}
+{% endif %}
