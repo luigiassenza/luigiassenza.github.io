@@ -13,7 +13,7 @@ To understand what machine learning is, it’s better to look at its goal: to pr
 So it needs to transform an input into an output. This is done through a mathematical function: a mathematical function is nothing but something (a technology if you like) that takes an input and gives back an output.
 
 So the role of machine learning is to produce that mathematical function.
-A mathematical function is a combination of its parameters (high parateres in the language of machine learning).
+A mathematical function is a combination of its parameters (also called model parameters).
 
 We then need to determine what function to use. Essentially its shape.
 A "shape" of a function is defined by its parameters and how these parameters are combined together.
@@ -22,11 +22,13 @@ For example, in a linear regression we have two parameters, $$m$$ (the slope) an
 
 $$y = mx + b$$
 
-These parameters are combined in a linear fashion with their input (only one input in this case x). So the role of machine learning is to find out the value of m and b. But not just any value of course, but the best values for m and b.
+These parameters are combined in a linear fashion with their input (only one input in this case, $$x$$). So the role of machine learning is to find out the value of $$m$$ and $$b$$. But not just any value of course, but the best values for $$m$$ and $$b$$.
 
-In matrix notation:
+If we have more than one variable, let's say $$n$$, our linear function looks like:
 
 $$y = m_1x_1 + m_2x_2 + \dotsc + m_nx_n + b$$
+
+In matrix notation:
 
 $$
 y =
@@ -41,9 +43,8 @@ x_2\\
 x_n
 \end{bmatrix}
 + b
+= m^Tx + b
 $$
-
-$$y = m^Tx + b$$
 
 Even deep learning model is a function. A big one but a function.
 Considering a simple neural network with two input layers, two hidden layers and one otput layer, the fuction is
@@ -164,8 +165,15 @@ The value we are looking for is determined by the so called loss function (somet
 
 The loss function, as the name implies, is something negative, something that we need to minimise. In a mathematical term, the goal is to reach the lowest point (a global mininum).
 
-This process of optimisation aims at finding those funtion parameters such that the value of th loss function is minimal.
+This process of optimisation aims at finding those function parameters such that the value of the loss function is minimal.
 
 The best values are determined by the input values we use. We iteratively feed the input value trying to reduce the value of the loss function at each iteration untill a minimum is reached.
 
 In this interation process the machine (our algorithm) “learns” from past experiences (the data we feed our model with).
+
+In the iteration process we use hyperparameters: unlike the (model) paramters which are used by the machine learning model (the mathematical model) then are those that define the model, used for prediction once the model has been optimised, hyperparameters instead are not used directly by the mathematical model; they are indirectly used to build the mathematical model.
+
+Example of hyperparameters are:
+1. the maxiumum number of iterations to perform before the algorithm stops;
+2. the learning rate, that is the step done by the gradient descent algorithm;
+3. the number of neighbours ($$k$$) in the k-nearest neighbour algorithm.
