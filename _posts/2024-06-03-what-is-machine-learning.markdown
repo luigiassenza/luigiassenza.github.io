@@ -5,6 +5,7 @@ date: 2024-06-03 19:22:00 +0100
 categories: Machine Learning
 author: Luigi Assenza
 comments_id: 2
+image: /images/neural_network.png
 ---
 <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript">
 </script>
@@ -48,7 +49,16 @@ x_n
 $$
 
 Even deep learning model is a function. A big one but a function.
-Considering a simple neural network with two input layers, two hidden layers and one otput layer, the fuction is
+Considering a simple neural network with one input layer, one hidden layer and one otput layer:
+
+<figure>
+    <img src="{{ page.image }}"/>
+    <figcaption>Figure 1 - A simple neural network</figcaption>
+</figure>
+
+The function of this simple neural network can be built starting from its matrix elements.
+
+In the input lavyer we have:
 
 $$
 x =
@@ -58,18 +68,26 @@ x_2
 \end{bmatrix}
 =
 \begin{bmatrix}
-a_0^1 \\
-a_0^1 \\
+a_1^0 \\
+a_2^0 \\
 \end{bmatrix}
 =
 a^0
 $$
+
+In the hidden lavyer we have:
 
 $$
 W^1 =
 \begin{bmatrix}
 w_{11}^1 & w_{12}^1 \\
 w_{21}^1 & w_{22}^1 \\
+\end{bmatrix}
+,
+Z^1=
+\begin{bmatrix}
+z_1^1 \\
+z_2^1 \\
 \end{bmatrix}
 ,
 A^1 =
@@ -81,6 +99,8 @@ a_2^1 \\
 b^1
 $$
 
+And in the output layer we have:
+
 $$
 W^2 =
 \begin{bmatrix}
@@ -88,19 +108,20 @@ w_{11}^2 \\
 w_{21}^2 \\
 \end{bmatrix}
 ,
-A^2 = a^2
+Z =
+\begin{bmatrix}
+z_1^2
+\end{bmatrix}
+,
+A^2 = 
+\begin{bmatrix}
+a_1^2
+\end{bmatrix}
 ,
 b^2
 $$
 
-$$
-o =
-\widehat{y}
-,
-\sigma(x)
-$$
-
-So the function becomes:
+So the function in matrix notations becomes:
 
 $$
 Z^1 = W^{1T}A^0 + b^1 \\
@@ -109,10 +130,12 @@ Z^2 = W^{2T}A^1 + b^2 \\
 \widehat{y} = \sigma(Z^2)
 $$
 
-Then as a single formula it becomes:
+$$\sigma(x)$$ is the activation fuction.
+
+As a single formula it becomes:
 
 $$
-\widehat{y} = 
+a_1^2 = 
     \sigma^2\Bigg(
         w_1^2
         \sigma^1\left(
@@ -128,14 +151,14 @@ $$
     \Bigg)
 $$
 
-And if $$\sigma()$$ is the `ReLU` function:
+If we choose the activation function $$\sigma()$$ to be the `ReLU` function:
 
 $$f(x) = max(x, 0)$$
 
 for both $$\sigma^1$$ and $$\sigma^2$$, then we have:
 
 $$
-\widehat{y} = 
+a_1^2 = 
     max\Bigg(
         w_1^2
         max\left(
