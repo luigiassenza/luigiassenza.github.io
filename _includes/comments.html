@@ -41,6 +41,7 @@
   }
 
   const renderComments = (comments) => {
+    const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
     /* Load the relativeTime plugin for dayjs so we can express dates relative to now */
     dayjs.extend(dayjs_plugin_relativeTime);
 
@@ -70,7 +71,15 @@
                         </a>
                         ${postedByAuthor ? '<i><span class="meta tag author-badge">(Author)</span></i>' : ''}
                         ${edited ? `<i><span class="meta comment-edited">(Edited)</span></i>` : ''}
-                        <i>- Posted <time datetime="${comment.created_at}">${datePosted}</time></i>
+                        <i>
+                          - Posted
+                          <time datetime="${comment.created_at}">
+                            ${new Date() - new Date(comment.created_at) > 86400000 ?
+                              new Date(comment.created_at).getDay()+'/'+months[new Date(comment.created_at).getMonth()]+'/'+new Date(comment.created_at).getFullYear() :
+                              datePosted
+                            }
+                         </time>
+                        </i>
                       </div>  
                     </div>
                     <div class="comment-body">${body}</div>
