@@ -19,7 +19,6 @@
 # in the templates via {{ site.myvariable }}.
 
 title: Luigi Assenza
-author: null
 # email: luigi.assenza@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   This is my personal website. It's mainly about software engineering, machine learning and math.
