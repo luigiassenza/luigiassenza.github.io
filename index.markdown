@@ -4,3 +4,9 @@
 
 layout: home
 ---
+
+<style>
+  .footer-heading, .p-name {
+    display: none;
+  }
+</style>

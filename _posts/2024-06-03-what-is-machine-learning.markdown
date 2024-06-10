@@ -7,6 +7,11 @@ author: Luigi Assenza
 comments_id: 2
 image: /images/neural_network.png
 ---
+<style>
+  .footer-heading, .p-name {
+    display: none;
+  }
+</style>
 <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript">
 </script>
 
