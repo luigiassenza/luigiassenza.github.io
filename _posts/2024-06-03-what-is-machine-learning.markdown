@@ -196,21 +196,25 @@ In this case the parameters to adjust are:
 
 $$w_{11}^1, w_{12}^1, w_{21}^1, w_{22}^1, b^1, w_1^2, w_2^2, b^2$$
  
-But what do we mean by the best values?
+Ajusting the parameters means finding the best values. But what do we mean by the best values?
 
-In order to have a best value we need to determine what value we are aiming at. Once we know what the value is, we'll try to get closer and closer.
+In order to have a best value we need to determine what values we are aiming at. Once we know what the value is, we'll try to get closer and closer.
 
-The value we are looking for is determined by the so called loss function (sometimes also called cost function or objective function).
+The values we are looking for is determined by the so called loss function (sometimes also called cost function or objective function).
+
+# The loss function
 
 The loss function, as the name implies, is something negative, something that we need to minimise. In a mathematical term, the goal is to reach the lowest point (a global mininum).
 
 This process of optimisation aims at finding those function parameters such that the value of the loss function is minimal.
 
-The best values are determined by the input values we use. We iteratively feed the input value trying to reduce the value of the loss function at each iteration untill a minimum is reached.
+The best values are determined by the input values we use. We iteratively feed the input value trying to reduce the value of the loss function at each iteration until a minimum is reached.
 
-In this interation process the machine (our algorithm) “learns” from past experiences (the data we feed our model with).
+In this interation process the computer (the machine) “learns” from past experiences (the data we feed our model with).
 
-In the iteration process we use hyperparameters: unlike the (model) paramters which are used by the machine learning model (the mathematical model) then are those that define the model, used for prediction once the model has been optimised, hyperparameters instead are not used directly by the mathematical model; they are indirectly used to build the mathematical model.
+# The optimisation process
+
+In the iteration process we use hyperparameters: unlike the (model) parameters which are used by the machine learning model (the mathematical model), the hyperparameters instead are not used directly by the mathematical model. They are simply used in the optimisation process to build the mathematical model.
 
 Example of hyperparameters are:
 1. the maxiumum number of iterations to perform before the algorithm stops;
