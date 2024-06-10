@@ -21,18 +21,18 @@ A definition of machine learning that often we see is the following:
 This definition, though correct, seems to be a bit abastract. Let's start to dig a bit deeper and try to be a bit more concrete, looking, first, at its goal.
 
 # The goal
-Machine learning's objective is to produce a outcome given an input, be this a prediction or a classification.\\
+Machine learning's objective is to produce an outcome given an input, be this a prediction or a classification.\\
 In order to reach its goal, machine learning needs an input: it's the data we provide, the data from which the computer will "learn". But it's not enough to provide data, we also need to provide the technology necessary to produce the output from the input data: this is done through a mathematical function.
 
 # The technology: a mathematical function
-A mathematical function tranforms the input into an output. The input is the values of its independent variables and the output is the value of its dependent variable. In order to produce the value of the dependent variable (given the values of the independent variables) we need to determine what type of variable is. We need to determine its "shape".
+A mathematical function tranforms the input into an output. The input is the values of its independent variables and the output is the value of its dependent variable. In order to produce the value of the dependent variable we need to determine what type of variable is. We need to determine its "shape".
 
 # The function type (shape)
-The type of function, or its shape if you like, is determined by its parameters, and how these are combined with its independent variables. For example, a liner function (like the one used in a linear regression model) has two parameters, $$m$$ (the slope) and $$b$$ (the intercept, the bias in machine learning language) combined in the following way:
+The type of function, essentially its shape (to be more visual), is determined by its parameters, and how these are combined with its independent variables. For example, a liner function (like the one used in a linear regression model) has two parameters, $$m$$ (the slope) and $$b$$ (the intercept, the bias in machine learning language),combined in the following way:
 
 $$y = mx + b$$
 
-In this example we only have one variable. But the input can contain as many variables we like and need. So, in case we have more than one variable, we would have a hyperplane (if we have two variables usually it's said to be a plane):
+In this example we only have one variable. But the input can contain as many variables we like and need. So, if we have two variables we get a plane and in case of more than two variable, we get a hyperplane:
 
 $$y = m_1x_1 + m_2x_2 + \dotsc + m_nx_n + b$$
 
@@ -54,15 +54,13 @@ x_n
 = m^Tx + b
 $$
 
-Functions can come in all shapes and forms. Even something as complex as a deep neural network is a mathematical function. A big one, but a function. 
+Functions come in all sorts of shapes. Even something as complex as a deep neural network is a mathematical function. A big one, but a function. 
 Let's consider a simple neural network with two neurons in the input layer, two neurons in the hidden layer and one neuron in the otput layer:
 
 <figure>
     <img src="{{ page.image }}"/>
     <figcaption>Figure 1 - A simple neural network</figcaption>
 </figure>
-
-The function of this simple neural network can be built starting from its matrix elements.
 
 In the input lavyer (layer $$0$$) we have:
 
@@ -171,7 +169,7 @@ a_1^2 =
     \Bigg)
 $$
 
-If, for example, we choose the activation function $$\sigma()$$ to be the _ReLU_ function:
+If, for example, we choose the activation function $$\sigma(x)$$ to be the _ReLU_ function:
 
 $$f(x) = max(x, 0)$$
 
@@ -197,11 +195,20 @@ a_1^2 =
     \Bigg)
 $$
 
-In this case the parameters to adjust are:
+Machine learning's role is then to determine the best functions.
+
+# The best function
+The best function is achieved by finding the best values of its paramters. In our previous examples, these are
+
+$$m, b$$
+
+in case of the linear regression, and 
 
 $$w_{11}^1, w_{12}^1, w_{21}^1, w_{22}^1, b^1, w_1^2, w_2^2, b^2$$
+
+in case of the neural network.
  
-Ajusting the parameters means finding the best values. But what do we mean by the best values?
+But what do we mean by the best values?
 
 In order to have a best value we need to determine what values we are aiming at. Once we know what the value is, we'll try to get closer and closer.
 
