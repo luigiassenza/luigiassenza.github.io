@@ -24,7 +24,6 @@
   const commentScripts = [
     'https://unpkg.com/marked@0.3.6/marked.min.js',
     'https://unpkg.com/dompurify@1.0.8/dist/purify.min.js',
-    'https://unpkg.com/dayjs@1.8.21/dayjs.min.js',
     'https://unpkg.com/dayjs@1.7.8/plugin/relativeTime.js',
   ];
 
@@ -43,8 +42,6 @@
   const renderComments = (comments) => {
     const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
     /* Load the relativeTime plugin for dayjs so we can express dates relative to now */
-    dayjs.extend(dayjs_plugin_relativeTime);
-
     commentsCount.innerText = `(${comments.length})`;
 
     const commentsList = document.createElement('ol');
@@ -56,7 +53,6 @@
         return comment1.created_at < comment2.created_at ? 1 : -1;
       })
       .map(comment => {
-        const datePosted = dayjs(comment.created_at).fromNow();
         const user = comment.user;
         const body = DOMPurify.sanitize(marked(comment.body));
         const postedByAuthor = comment.author_association === 'OWNER';
@@ -72,12 +68,9 @@
                         ${postedByAuthor ? '<i><span class="meta tag author-badge">(Author)</span></i>' : ''}
                         ${edited ? `<i><span class="meta comment-edited">(Edited)</span></i>` : ''}
                         <i>
-                          - Posted
+                          - Posted,
                           <time datetime="${comment.created_at}">
-                            ${new Date() - new Date(comment.created_at) > 86400000 ?
-                              new Date(comment.created_at).getDay()+'/'+months[new Date(comment.created_at).getMonth()]+'/'+new Date(comment.created_at).getFullYear() :
-                              datePosted
-                            }
+                            ${new Date(comment.created_at).getDate()+' '+months[new Date(comment.created_at).getMonth()]+' '+new Date(comment.created_at).getFullYear()}
                          </time>
                         </i>
                       </div>  
