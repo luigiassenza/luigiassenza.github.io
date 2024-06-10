@@ -13,14 +13,14 @@ image: /images/neural_network.png
 A definition of machine learning that often we see is the following:
 > It is the computer’s ability to learn without being explicitly programmed.
 
-This definition, though correct, seems to be a bit abastract. Let's start to dig a bit deeper and try to be a bit more concrete, looking at its goal first.
+This definition, though correct, seems to be a bit abastract. Let's start to dig a bit deeper and try to be a bit more concrete, looking, first, at its goal.
 
 # The goal
 Machine learning's objective is to produce a outcome given an input, be this a prediction or a classification.\\
-In order to reach its goal, machine learning needs an input: it's the data we provide, from which the computer will "learn". But of course it's not enough to provide data, we also need to provide a way, a technoloyg, to transform the input data into an ouput: this is don through a mathematical function.
+In order to reach its goal, machine learning needs an input: it's the data we provide, the data from which the computer will "learn". But it's not enough to provide data, we also need to provide the technology necessary to produce the output from the input data: this is done through a mathematical function.
 
 # The technology: a mathematical function
-A mathematical function tranforms an input into an output. The input are the values of its independent variables and the output is the value of its dependent variable. In order to produce the value of the dependent variable (given the values of the independent variables) we need to determine what type of variable is. We need to determine its "shape".
+A mathematical function tranforms the input into an output. The input is the values of its independent variables and the output is the value of its dependent variable. In order to produce the value of the dependent variable (given the values of the independent variables) we need to determine what type of variable is. We need to determine its "shape".
 
 # The function type (shape)
 The type of function, or its shape if you like, is determined by its parameters, and how these are combined with its independent variables. For example, a liner function (like the one used in a linear regression model) has two parameters, $$m$$ (the slope) and $$b$$ (the intercept, the bias in machine learning language) combined in the following way:
