@@ -3,6 +3,12 @@ layout: page
 title: About
 permalink: /about/
 ---
+<style>
+  .footer-heading, .p-name {
+    display: none;
+  }
+</style>
+
 I am a senior full stack software engineer.\
 I previously worked in financial services, investment banking and corporate finance before transitioning into software engineering.\
 Software development has been a long-standing interest which has grown over time during my career, and that I had the opportunity to turn into a profession.
