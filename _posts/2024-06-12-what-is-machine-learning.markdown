@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "What is machine learning?"
-date: 2024-06-03 19:22:00 +0100
+date: 2024-06-12 23:25:00 +0100
 categories: Machine Learning
 author: Luigi Assenza
 comments_id: 2
