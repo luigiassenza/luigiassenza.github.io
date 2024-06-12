@@ -3,7 +3,7 @@
 
 <section id="comments">
   <div class="comment-actions">
-    <h2>Comments <span id="comments-count"></span></h2>
+    <h2><span id="comments-count"></span></h2>
     <h4>
       <a class="button" href="https://github.com/{{ issues_repo }}/issues/{{ issue_id }}" target="_blank">
         Post a comment on GitHub
@@ -41,8 +41,7 @@
 
   const renderComments = (comments) => {
     const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-    /* Load the relativeTime plugin for dayjs so we can express dates relative to now */
-    commentsCount.innerText = `(${comments.length})`;
+    commentsCount.innerText = `${comments.length === 1 ? `${comments.length} Comment` : `${comments.length} Comments`}`;
 
     const commentsList = document.createElement('ol');
     commentsList.className = 'comments-list';
