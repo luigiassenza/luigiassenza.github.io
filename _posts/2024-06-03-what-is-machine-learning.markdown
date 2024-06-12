@@ -15,24 +15,23 @@ image: /images/neural_network.png
 <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript">
 </script>
 
-A definition of machine learning that often we see is the following:
-> It is the computer’s ability to learn without being explicitly programmed.
+A definition of machine learning that often we see is that:
+> Machine learning is the computer’s ability to learn without being explicitly programmed.
 
-This definition, though correct, seems to be a bit abastract. Let's start to dig a bit deeper and try to be a bit more concrete, looking, first, at its goal.
+This definition, though it covers the big picture of machine learning, seems to be a bit too abstract. Let's start to dig a bit deeper and be more concrete, looking first at its goal.
 
 # The goal
-Machine learning's objective is to produce an outcome given an input, be this a prediction or a classification.\\
-In order to reach its goal, machine learning needs an input: it's the data we provide, the data from which the computer will "learn". But it's not enough to provide data, we also need to provide the technology necessary to produce the output from the input data: this is done through a mathematical function.
+Machine learning's objective is to produce an outcome given an input, be this a prediction or a classification. The input is the data we provide, the data we use to "feed" our computer and from which it will "learn". But the data itself is not enough; we also need to provide the technology necessary to produce the output, given the input: this is done through a mathematical function.
 
 # The technology: a mathematical function
-A mathematical function tranforms the input into an output. The input is the values of its independent variables and the output is the value of its dependent variable. In order to produce the value of the dependent variable we need to determine what type of variable is. We need to determine its "shape".
+A mathematical function tranforms the input into an output. The input is represented by the value/s of its independent variable/s and the output is the value of its dependent variable. In order to produce the value of the dependent variable we need to determine what type of function to use: we need to determine its "shape" if you prefer.
 
 # The function type (shape)
-The type of function, essentially its shape (to be more visual), is determined by its parameters, and how these are combined with its independent variables. For example, a liner function (like the one used in a linear regression model) has two parameters, $$m$$ (the slope) and $$b$$ (the intercept, the bias in machine learning language),combined in the following way:
+The type of function, essentially its shape if we want to be more visual, is determined by its parameters, and how these are combined with its independent variables. For example, a liner function (like the one used in a linear regression model) has two parameters, $$m$$ (the slope) and $$b$$ (the intercept, the bias in machine learning language),combined in the following way:
 
 $$y = mx + b$$
 
-In this example we only have one variable. But the input can contain as many variables we like and need. So, if we have two variables we get a plane and in case of more than two variable, we get a hyperplane:
+In this example we only have one variable. But the input can contain as many variables we like and need. So, if we have two variables we get a plane and in case of more than two variables, we get a hyperplane:
 
 $$y = m_1x_1 + m_2x_2 + \dotsc + m_nx_n + b$$
 
